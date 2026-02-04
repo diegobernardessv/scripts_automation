@@ -1,0 +1,62 @@
+# --- Arquivos pessoais ---
+Yahiko_rules.md
+*.env
+*.log
+*.sqlite3
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+*.coverage
+.coverage.*
+.cache/
+.pytest_cache/
+.mypy_cache/
+.dmypy.json
+.pyre/
+
+# --- Virtualenv ---
+venv/
+ENV/
+env/
+.venv/
+
+# --- Flask ---
+instance/
+*.db
+*.bak
+
+# --- Node / Frontend ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# --- Build / Dist ---
+dist/
+build/
+*.out
+*.tmp
+
+# --- Docker ---
+*.pid
+*.seed
+*.pid.lock
+
+# --- IDEs / Editores ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*.bak
+
+# --- Sistema ---
+.DS_Store
+Thumbs.db
