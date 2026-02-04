@@ -1,6 +1,6 @@
 # 🤖 Scripts de Automação
 
-Este repositório contém uma coleção de scripts Python desenvolvidos para automatizar tarefas rotineiras e processos de análise de dados.
+Coleção de scripts Python desenvolvidos para automatizar tarefas rotineiras e processos de análise de dados.
 
 ## 📋 Índice
 
