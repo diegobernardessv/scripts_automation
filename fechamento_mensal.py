@@ -13,7 +13,7 @@ def analisar_estoque(file_path):
         return
 
     # --- CONFIGURAÇÃO ---
-    # Coloque os nomes exatos das colunas da sua planilha aqui
+    # Nomes exatos das colunas da planilha
     coluna_armazem = 'Local'
     coluna_valor = '(D)Custo Total' # Usaremos o custo total já existente na planilha
     coluna_grupo = 'Grupo'
@@ -72,7 +72,18 @@ def analisar_estoque(file_path):
     filtro_refratarios = (df_filtrado[coluna_grupo].isin(grupos_refratarios)) & (df_filtrado[coluna_armazem] == 49)
     valor_refratarios = df_filtrado.loc[filtro_refratarios, coluna_valor].sum()
     print(f"Refratarios: R$ {valor_refratarios:,.2f}")
-
+    
+    # 3. Cálculo Estoque Geral (Soma de todas as categorias)
+    print(("\n=== VALOR DE ESTOQUE GERAL (SOMATÓRIO DE TODAS AS CATEGORIAS) ==="))
+    
+    estoque_filtrado = 0
+    
+    for nome, grupos in categorias.items():
+        valor = df_filtrado[df_filtrado[coluna_grupo].isin(grupos)][coluna_valor].sum()
+        estoque_filtrado += valor
+        valor_total = estoque_filtrado + valor_refratarios  # Cálculo do estoque geral incluindo os refratários
+    print(f"Estoque Geral (Total): R$ {valor_total:,.2f}")
+  
 if __name__ == "__main__":
     # Coloque aqui o caminho para a sua planilha de estoque.
     caminho_do_arquivo = 'analise_estoque.xlsx'
